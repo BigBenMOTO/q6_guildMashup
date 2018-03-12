@@ -24,7 +24,11 @@ public class Sample extends Actor
     {
         keyPress();
     } 
-
+    
+    /**
+    * Check for keyDown to initiate movement of player actor.  "A" for LEFT, "B" for RIGHT.
+    * JUMP movement is located in checkGravity method due to checks on groundHeight and gravity changes
+    */
     private void keyPress()
     {
         int leftEdge = 0;
@@ -61,6 +65,10 @@ public class Sample extends Actor
         }
     }
 
+    /**
+    * Check if player actor is touching ground.  If TRUE, then allow jumping when "space" is pressed.  
+    * Timer set to prevent spamming of player actor jump.  
+    */
     private void checkGravity()
     {
         if(timer==0)
